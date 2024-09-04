@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Filter = ({ filter, setFilter }) => {
   //filter name based on the the search keyword
   const handleFilterChange = e => {
@@ -16,4 +18,9 @@ export const Filter = ({ filter, setFilter }) => {
       />
     </div>
   );
+};
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  setFilter: PropTypes.func.isRequired,
 };
