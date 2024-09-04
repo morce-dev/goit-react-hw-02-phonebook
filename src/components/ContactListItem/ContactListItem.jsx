@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import css from './ContactListItem.module.css';
+import { IoMdClose } from 'react-icons/io';
 
 export const ContactListItem = ({ filteredContact, deleteContact }) => {
   // handleDelete method
@@ -7,10 +9,12 @@ export const ContactListItem = ({ filteredContact, deleteContact }) => {
   };
 
   return (
-    <li>
+    <li className={css['list']}>
       <p>{filteredContact.name}:</p>
       <p>{filteredContact.number}</p>
-      <button onClick={handleDelete}>Delete</button>
+      <button onClick={handleDelete} className={css['btn']}>
+        <IoMdClose />
+      </button>
     </li>
   );
 };
