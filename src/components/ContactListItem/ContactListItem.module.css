@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  border-radius: 4px;
+  background-color: #cbcbcb;
+  border-color: transparent;
+}
+
+.btn:hover {
+  background-color: #cd1c18;
+  color: white;
+  border-color: transparent;
+}
