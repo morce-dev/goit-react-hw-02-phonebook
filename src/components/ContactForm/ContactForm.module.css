@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+}
+
+.btn {
+  width: 170px;
+  padding: 10px;
+  background-color: #305cde;
+  color: white;
+  border-color: transparent;
+}
+
+.btn:hover {
+  background-color: #182e6f;
+  border-color: transparent;
+}
