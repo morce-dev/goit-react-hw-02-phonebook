@@ -22,19 +22,37 @@ export class App extends Component {
 
   deleteContact = id => {
     this.setState(prevState => ({
-      contacts: prevState.contact.filter(contact => contact.id !== id),
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
   };
 
+  setFilter = filterValue => {
+    this.setState({
+      filter: filterValue,
+    });
+  };
+
+  filterContact = () => {
+    const { contacts, filter } = this.state;
+    const filterLowerCase = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filterLowerCase)
+    );
+  };
+
   render() {
-    const { contacts } = this.state;
+    const { contacts, filter } = this.state;
     return (
       <div>
         <h1>Phonebook</h1>
         <ContactForm addContact={this.addContact} contacts={contacts} />
+
         <h2>Contacts</h2>
-        <Filter />
-        <ContactList contacts={contacts} deleteContact={this.deleteContact} />
+        <Filter filter={filter} setFilter={this.setFilter} />
+        <ContactList
+          filterContact={this.filterContact}
+          deleteContact={this.deleteContact}
+        />
       </div>
     );
   }
