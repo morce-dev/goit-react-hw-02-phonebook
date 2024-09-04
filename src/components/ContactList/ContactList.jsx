@@ -1,12 +1,13 @@
 import { ContactListItem } from 'components/ContactListItem/ContactListItem';
 
-export const ContactList = ({ contacts, deleteContact }) => {
+export const ContactList = ({ filterContact, deleteContact }) => {
+  const filteredContacts = filterContact();
   return (
     <ul>
-      {contacts.map(contact => (
+      {filteredContacts.map(filteredContact => (
         <ContactListItem
-          key={contact.id}
-          contact={contact}
+          key={filteredContact.id}
+          filteredContact={filteredContact}
           deleteContact={deleteContact}
         />
       ))}
