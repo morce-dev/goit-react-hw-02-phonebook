@@ -1,11 +1,14 @@
-import React from 'react';
+export const ContactListItem = ({ filteredContact, deleteContact }) => {
+  // handleDelete method
+  const handleDelete = () => {
+    deleteContact(filteredContact.id);
+  };
 
-export const ContactListItem = ({ contact, deleteContact }) => {
   return (
     <li>
-      <p>{contact.name}</p>
-      <p>{contact.number}</p>
-      <button>Delete</button>
+      <p>{filteredContact.name}:</p>
+      <p>{filteredContact.number}</p>
+      <button onClick={handleDelete}>Delete</button>
     </li>
   );
 };
