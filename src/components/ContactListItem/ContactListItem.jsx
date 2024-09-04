@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const ContactListItem = ({ filteredContact, deleteContact }) => {
   // handleDelete method
   const handleDelete = () => {
@@ -11,4 +13,9 @@ export const ContactListItem = ({ filteredContact, deleteContact }) => {
       <button onClick={handleDelete}>Delete</button>
     </li>
   );
+};
+
+ContactListItem.propTypes = {
+  filteredContact: PropTypes.object.isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };
